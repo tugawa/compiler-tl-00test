@@ -1,0 +1,14 @@
+int x = 3; int y = 5; x + 2 * y
+13
+int a = 10; int b = 5; a / 2 - b
+0
+addr p = @12; p - @4
+2
+1 * @4 + 2
+Type_error
+1 * ((@4 + 2) - @0)
+3
+int x = 10; addr y = @4; y + (x + 1)
+48
+@1 + @2
+Type_error

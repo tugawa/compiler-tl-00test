@@ -1,0 +1,14 @@
+int x = 3; int y = 5; x + 2 * y
+(+ int (VarRef int x) (* int (IntConst int 2) (VarRef int y)))
+int a = 10; int b = 5; a / 2 - b
+(- int (/ int (VarRef int a) (IntConst int 2)) (VarRef int b))
+addr p = @12; p - @4
+(- int (VarRef addr p) (AddrConst addr 4))
+1 * @4 + 2
+Type_error
+1 * ((@4 + 2) - @0)
+(* int (IntConst int 1) (- int (+ addr (AddrConst addr 4) (IntConst int 2)) (AddrConst addr 0)))
+int x = 10; addr y = @4; y + (x + 1)
+(+ addr (VarRef addr y) (+ int (VarRef int x) (IntConst int 1)))
+@1 + @2
+Type_error
