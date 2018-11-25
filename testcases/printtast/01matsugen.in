@@ -1,0 +1,12 @@
+@4 - @4
+(- int (AddrConst addr 4) (AddrConst addr 4))
+@4 + 1 - @8
+(- int (+ addr (AddrConst addr 4) (IntConst int 1)) (AddrConst addr 8))
+addr p = @12; int x = 1; p - x - x - x
+(- addr (- addr (- addr (VarRef addr p) (VarRef int x)) (VarRef int x)) (VarRef int x))
+(@4 - 1 - @0) * 3
+(* int (- int (- addr (AddrConst addr 4) (IntConst int 1)) (AddrConst addr 0)) (IntConst int 3))
+(@12 - 2 - @0) + 2
+(+ int (- int (- addr (AddrConst addr 12) (IntConst int 2)) (AddrConst addr 0)) (IntConst int 2))
+(@12 - @4) / 2
+(/ int (- int (AddrConst addr 12) (AddrConst addr 4)) (IntConst int 2))
